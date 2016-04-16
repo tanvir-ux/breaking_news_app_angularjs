@@ -1,4 +1,36 @@
 div.container {
     margin: 30px;
    padding: 10px;
+    
+}
+
+button {
+    float: right;
+    background-color: cadetblue;
+    color: white;
+    border: none;
+    margin-left: 15px;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    margin-top: -20px;
+    
+}
+
+div.myLogo{
+    float: left;
+    margin-top: -30px;
+   
+}
+
+div.myLogo > img {
+    border-radius: 20px;
+    width: 100px;
+    height: 70px;
+   
+}
+
+div.myHeading {
+    float: left;
+    text-align: center;
 }

@@ -1,4 +1,4 @@
-angular.module('lisaApp',['ngRoute','ngResource','simplePagination'])
+angular.module('lisaApp',['ngRoute','ngResource','simplePagination','cgBusy'])
 .controller('MyCtrl', ['$scope', 'Pagination','$http',
 function($scope, Pagination,$http) {
   $scope.pagination = Pagination.getNew(5);
@@ -6,7 +6,7 @@ function($scope, Pagination,$http) {
      $scope.posts = [];
     
     
-    $http.get("https://www.reddit.com/r/worldnews/new/.json").success(function(data){
+  $scope.myPromise =  $http.get("https://www.reddit.com/r/worldnews/new/.json").success(function(data){
        
        
         $scope.posts = [];
@@ -15,8 +15,8 @@ function($scope, Pagination,$http) {
              
              $scope.posts.push(child.data);
              
-        console.log(child.data);
-      })
+        
+      });
         
         
         
@@ -29,7 +29,7 @@ function($scope, Pagination,$http) {
              
               $scope.posts = [];
              
-                 $http.get("https://www.reddit.com/r/worldnews/new/.json").success(function(data){
+              $scope.myPromise =    $http.get("https://www.reddit.com/r/worldnews/new/.json").success(function(data){
        
                                 $scope.posts = [];
 
